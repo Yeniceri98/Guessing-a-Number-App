@@ -57,7 +57,7 @@ export default function App() {
 
     return (
         <View style={styles.screen}>
-            <Header title="Guess a Number App" />
+            <Header title="Guessing a Number App" />
             
             {/* <StartGameScreen />
             <GameScreen /> */}
