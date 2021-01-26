@@ -4,6 +4,8 @@ import { Button, StyleSheet, Text, View, Image } from 'react-native'
 import Colors from '../constants/Colors';
 import text from '../constants/text';
 
+import MainButton from '../custom_components/MainButton';     // Custom Button
+
 
 const GameOverScreen = props => {
     return (
@@ -15,7 +17,12 @@ const GameOverScreen = props => {
             <Text style={styles.selectedNumber}>Chosen Number: {props.userNumber}</Text>
             <Text style={styles.rounds}>Number of Rounds: {props.roundsNumber}</Text>     
             <Text style={styles.buttonContainer}>
-                <Button title="New Game" onPress={props.onRestartGame} color="navy"/>
+                {/* <Button title="New Game" onPress={props.onRestartGame} color="navy"/> */}
+                {/* Custom Button kullanırken "title" kullanılmaz. Onun yerine aşağıdaki gibi componentin arasına yazılır */}
+                
+                <MainButton onPress={props.onRestartGame}>
+                    NEW GAME
+                </MainButton>
             </Text>
             
         </View>

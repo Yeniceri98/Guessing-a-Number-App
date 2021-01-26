@@ -13,8 +13,9 @@ import GameOverScreen from './screens/GameOverScreen';
 // Custom Font
 const fetchFonts = () => {
     return Font.loadAsync({
-        'gorditas-regular': require('./assets/fonts/Gorditas-Regular.ttf'),       // İsimlendirmeyi istediğimiz gibi yapabiliriz
-        'gorditas-bold': require('./assets/fonts/Gorditas-Bold.ttf')              // StyleSheet'te kullanmak istediğimiz componente atarken bu isimleri kullanacağız
+        'gorditas-regular': require('./assets/fonts/Gorditas-Regular.ttf'),      // İsimlendirmeyi istediğimiz gibi yapabiliriz
+        'gorditas-bold': require('./assets/fonts/Gorditas-Bold.ttf'),            // StyleSheet'te kullanmak istediğimiz componente atarken bu isimleri kullanacağız
+        'CarterOne-Regular': require('./assets/fonts/CarterOne-Regular.ttf')
     });
 }
 

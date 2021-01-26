@@ -4,6 +4,8 @@ export default {
     background: "#90ee90",
     backgroundScreen: "#add8e6",
     titleColor: "#191970",               // midnight blue
+    mainButtonColor: "#00008b",
+    secondaryButtonColor: "#008080"
 };
 
 

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button, Alert } from 'react-native'
 import Card from '../custom_components/Card';
 import Colors from '../constants/Colors';
 import text from '../constants/text';
+import SecondaryButton from '../custom_components/SecondaryButton';
 
 
 const generateRandomBetween = (min, max, exclude) => {
@@ -56,8 +57,15 @@ const GameScreen = ({ userChoice, onGameOver }) => {     // App.js'den "userChoi
         <View style={styles.screen}>
             <Text style={styles.paragraph}>Opponent's Guess: {currentGuess}</Text>
             <Card style={styles.buttonContainer}>
-                <Button title="Lower" onPress={nextGuessHandler.bind(this, "lower")} color="red" />   
-                <Button title="Greater" onPress={nextGuessHandler.bind(this, "greater")} color="blue" />
+                {/* <Button title="Lower" onPress={nextGuessHandler.bind(this, "lower")} color="red" />   
+                <Button title="Greater" onPress={nextGuessHandler.bind(this, "greater")} color="blue" /> */}
+
+                <SecondaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+                    Lower
+                </SecondaryButton>
+                <SecondaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+                    Greater
+                </SecondaryButton>
             </Card>
         </View>
     )

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Button, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View, Keyboard, Alert, Image } from 'react-native'
 
-import Card from '../custom_components/Card';       // Input containerlar için oluşturduğumuz template'i aldığımız dosya
-import Input from '../custom_components/Input';     // <Card /> componentinde yaptığımız gibi custom component oluşturduk
-import Colors from '../constants/Colors';           // Color template. Aşağıdaki buton kısmında color={Colors.primary} diyerek kullandık
-import text from '../constants/text';               // Text template
+import Card from '../custom_components/Card';                // Input containerlar için oluşturduğumuz template'i aldığımız dosya
+import Input from '../custom_components/Input';              // <Card /> componentinde yaptığımız gibi custom component oluşturduk
+import Colors from '../constants/Colors';                    // Color template. Aşağıdaki buton kısmında color={Colors.primary} diyerek kullandık
+import text from '../constants/text';                        // Text template
+import MainButton from '../custom_components/MainButton';    // Custom Button
 
 
 const StartGameScreen = ({ onStartGame }) => {                   // App.js'den aldığımız "onStartGame" prop'unu aşağıdaki "Start Game" butonunun olduğu kısımda kullanıcaz
@@ -43,7 +44,12 @@ const StartGameScreen = ({ onStartGame }) => {                   // App.js'den a
             <Card style={styles.confirmedCard}>
                 <Text style={styles.confirmedText}>Chosen Number: {selectedNumber} </Text>
                 <View style={styles.startButton}>
-                    <Button title="Start Game" onPress={() => onStartGame(selectedNumber)} />  
+                    {/* <Button title="Start Game" onPress={() => onStartGame(selectedNumber)} />       "MainButton" custom componentini kullanıcaz */}
+                    {/* Custom Button kullanırken "title" kullanılmaz. Onun yerine aşağıdaki gibi componentin arasına yazılır */}
+
+                    <MainButton onPress={() => onStartGame(selectedNumber)}>
+                        START GAME
+                    </MainButton>
 
                     {/* App.js'den "onStartGame" prop'unu aldık */}
                 </View>
