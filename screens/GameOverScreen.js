@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View, Image } from 'react-native'
 
 import Colors from '../constants/Colors';
 import text from '../constants/text';
@@ -9,6 +9,9 @@ const GameOverScreen = props => {
     return (
         <View style={styles.screen}>
             <Text style={styles.gameOver}>Game is Over!</Text>
+            <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/success.png')} style={styles.image} />
+            </View>    
             <Text style={styles.selectedNumber}>Chosen Number: {props.userNumber}</Text>
             <Text style={styles.rounds}>Number of Rounds: {props.roundsNumber}</Text>     
             <Text style={styles.buttonContainer}>
@@ -43,5 +46,17 @@ const styles = StyleSheet.create({
     buttonContainer: {
         marginTop: 15,
         alignItems: "center",
+    },
+    imageContainer: {
+        width: "80%",
+        height: 250,
+        marginVertical: 15,       // Top and Bottom (ayrı ayrı marginTop ve marginBottom yapmaya gerek kalmaz)
+        borderRadius: 50,
+        borderWidth: 3,
+        overflow: "hidden"        // Burayı eklemezsek çerçeve kısmı borderRadius yüzünden düzgün durmaz
+    },
+    image: {
+        width: "100%",            // borderRadius kullanınca resimden kırpar. Resimden kırpmaması için <Image /> componentini <View /> in içine alıp <View /> componentinde "imageContainer" style ataması yaptık
+        height: "100%"            // "imageContainer" da width ve height'ı ayarlamıştık. Burada o ayarların aynı kalması için her iki property'yi de 100% yaptım
     }
 })
