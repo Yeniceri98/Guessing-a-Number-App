@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View, Keyboard, Alert } from 'react-native'
+import { Button, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View, Keyboard, Alert, Image } from 'react-native'
 
 import Card from '../custom_components/Card';       // Input containerlar için oluşturduğumuz template'i aldığımız dosya
 import Input from '../custom_components/Input';     // <Card /> componentinde yaptığımız gibi custom component oluşturduk
@@ -58,6 +58,10 @@ const StartGameScreen = ({ onStartGame }) => {                   // App.js'den a
         }}>
             <View style={styles.screen}>
                 <Text style={styles.title}>Start a New Game</Text>
+                <Image 
+                    source={{ uri: 'https://raw.githubusercontent.com/thiagodnf/guess-the-number/master/img/logo.png?token=AAG9XwrL-t72tifQ-eA47lewNBqqV9Nwks5cDnuJwA%3D%3D' }}
+                    style={styles.image}
+                />
                 <Card style={styles.inputContainer}>
                     <Text style={styles.parapraph}>Select a Number</Text>
                     <Input 
@@ -98,7 +102,7 @@ const styles = StyleSheet.create({
         fontSize: text.titleSize,
         // fontWeight: text.titleWeight,    // Custom font kullanıldığı zaman fontWeight kullanmamalıyız
         color: Colors.titleColor,
-        marginVertical: 10,
+        marginTop: 5,
         fontFamily: "gorditas-bold"         // Custom Font
     },
     parapraph: {
@@ -110,6 +114,8 @@ const styles = StyleSheet.create({
         width: 300,                         // Bu 3 property "Card.js" de yok. Ekstra ekledik
         maxWidth: "80%",
         alignItems: "center",
+        marginTop: 5,
+        marginBottom: 2
         // elevation: 15,                   // Android ---> Elevation    iOS ---> Shadow   property'lerini destekler
         // backgroundColor: "white",        // Yorum satırına aldığım property'ler Card.js'den gelenlerdi ve <Card /> componenti oluşturarak onları otomatikman aldık. Bu yüzden ekstra bir daha bu propertyleri yazmak zorunda değiliz
         // padding: 20,
@@ -141,7 +147,7 @@ const styles = StyleSheet.create({
     confirmedCard: {
         backgroundColor: "#ff8c00",
         padding: 20,
-        marginTop: 20,
+        marginTop: 15,
         borderWidth: 2,
         alignItems: "center",
     },
@@ -152,6 +158,11 @@ const styles = StyleSheet.create({
     startButton: {
         paddingTop: 15,
         width: "50%"
+    },
+    image: {
+        width: "80%",           // Network image'larda width ve height belirtmemiz zorunludur
+        height: 120,            // Local image'da koymasak da çalışır ve resmin tam boyutunu alır
+        marginVertical: 10
     }
 
 })
