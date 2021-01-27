@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     headerTitle: {
         color: Colors.titleColor,
         fontSize: text.titleSize,
-        // fontWeight: text.titleWeight,
-        fontFamily: "gorditas-bold"             // Custom font kullandığımız için yukarıdaki fontWeight'ı yorum satırına aldım
+        // fontWeight: text.titleWeight,        // Custom Font kullanıldığı zaman fontWeight kullanılmaz
+        fontFamily: "gorditas-bold"             // Custom Font 
     }
 })
 

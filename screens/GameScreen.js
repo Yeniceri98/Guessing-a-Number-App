@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react'
 import { StyleSheet, Text, View, Button, Alert, Image } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';      // Icon için ekledik. "expo init" komutuyla başlatılan projelerde otomatikman gelir  ----->  https://icons.expo.fyi/
 
-
 import Card from '../custom_components/Card';
 import Colors from '../constants/Colors';
 import text from '../constants/text';
@@ -15,7 +14,7 @@ const generateRandomBetween = (min, max, exclude) => {
     const rndNum = Math.floor(Math.random() * (max - min)) + min;    // This JavaScript function always returns a random number between min (included) and max (excluded):
 
     if (rndNum === exclude) {
-        return generateRandomBetween(min, max, exclude);    // Recursion
+        return generateRandomBetween(min, max, exclude);             // Recursion
     } else {
         return rndNum;
     }
@@ -62,10 +61,10 @@ const GameScreen = ({ userChoice, onGameOver }) => {     // App.js'den "userChoi
                 {/* <Button title="Lower" onPress={nextGuessHandler.bind(this, "lower")} color="red" />   
                 <Button title="Greater" onPress={nextGuessHandler.bind(this, "greater")} color="blue" /> */}
 
-                <SecondaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+                <SecondaryButton onPress={nextGuessHandler.bind(this, "greater")}>
                     <AntDesign name="arrowup" size={30} color="white" />
                 </SecondaryButton>
-                <SecondaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+                <SecondaryButton onPress={nextGuessHandler.bind(this, "lower")}>
                     <AntDesign name="arrowdown" size={30} color="white" />
                 </SecondaryButton>
             </Card>
