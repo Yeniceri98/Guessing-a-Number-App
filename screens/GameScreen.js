@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { StyleSheet, Text, View, Button, Alert } from 'react-native'
+import { StyleSheet, Text, View, Button, Alert, Image } from 'react-native'
+import { AntDesign } from '@expo/vector-icons';      // Icon için ekledik. "expo init" komutuyla başlatılan projelerde otomatikman gelir  ----->  https://icons.expo.fyi/
+
 
 import Card from '../custom_components/Card';
 import Colors from '../constants/Colors';
@@ -61,12 +63,17 @@ const GameScreen = ({ userChoice, onGameOver }) => {     // App.js'den "userChoi
                 <Button title="Greater" onPress={nextGuessHandler.bind(this, "greater")} color="blue" /> */}
 
                 <SecondaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-                    Lower
+                    <AntDesign name="arrowup" size={30} color="white" />
                 </SecondaryButton>
                 <SecondaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-                    Greater
+                    <AntDesign name="arrowdown" size={30} color="white" />
                 </SecondaryButton>
             </Card>
+     
+            <Image 
+                source={{ uri: 'https://blog.pimco.com/-/media/blog/images/2016/03/43599ukbankrateupdownblog.ashx?la=en&vs=1&d=20170209220928&hash=7438AD3267989A2DA38FCFE4A111D5F3DEE5C9D4'}} 
+                style={styles.image}
+            />            
         </View>
     )
 }
@@ -90,5 +97,10 @@ const styles = StyleSheet.create({
     paragraph: {
         fontSize: text.paragraphSize,
         fontFamily: "gorditas-regular"
+    },
+    image: {
+        width: "90%",
+        height: 300,
+        marginTop: 30,
     }
 })
